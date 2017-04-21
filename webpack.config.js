@@ -66,7 +66,7 @@ module.exports={
 		new HtmlPlugin({
 			template:"./src/index.ejs",
 			filename:"index.html",
-			title:"豆瓣电影",
+			title:"定制生活——————专属你的魅力",
 			name:"kailong"
 		}),
 //		new webpack.optimize.UglifyJsPlugin({
