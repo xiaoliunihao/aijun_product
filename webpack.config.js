@@ -17,7 +17,16 @@ module.exports={
 	devServer:{
 		contentBase:"./build",
 		host:"localhost",
-		port:7000
+		port:7000,
+		proxy:{
+			"/indexList":{
+				target:"http://www.fanjiangdz.com",
+				changeOrigin:true,
+				pathRewrite:{
+					"^/indexList":''
+				}
+			}
+		}
 	},
 
 	module:{

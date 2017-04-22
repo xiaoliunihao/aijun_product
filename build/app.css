@@ -822,6 +822,69 @@ a {
   .yo-header .title {
     font-weight: normal; }
 
+.title_tao {
+  height: 0.55rem;
+  width: 100%;
+  background: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .title_tao .title_header {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: 0.16rem 0;
+    padding-right: 0.1rem; }
+    .title_tao .title_header .title_left {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      width: 0.56rem;
+      height: 100%;
+      padding-right: 0.67rem; }
+      .title_tao .title_header .title_left .sign_img {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: .1px; }
+        .title_tao .title_header .title_left .sign_img .img_tao {
+          width: 0.16rem;
+          height: 100%;
+          overflow: hidden;
+          float: right; }
+          .title_tao .title_header .title_left .sign_img .img_tao img {
+            width: 100%;
+            height: auto; }
+      .title_tao .title_header .title_left .sign_text {
+        width: 1.03rem;
+        height: 100%;
+        text-align: center;
+        line-height: 0.23rem;
+        font-size: 0.16rem; }
+    .title_tao .title_header .right_btn {
+      width: 0.56rem;
+      height: 100%; }
+      .title_tao .title_header .right_btn a {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex; }
+        .title_tao .title_header .right_btn a div {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
+          width: .1px;
+          line-height: 0.26rem;
+          color: #666666;
+          font-size: 0.14rem; }
+
 .footer {
   width: 100%;
   height: 0.48rem; }
@@ -917,9 +980,98 @@ a {
       position: relative;
       padding-top: 0.28rem; }
 
+.product_list {
+  width: 100% !important;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0.08rem 0.1rem; }
+  .product_list .product_a {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    background: #fff; }
+    .product_list .product_a .top_product {
+      width: 100%;
+      overflow: hidden; }
+      .product_list .product_a .top_product img {
+        width: 100%;
+        height: auto; }
+    .product_list .product_a .news_product {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      width: 100%;
+      padding: 0 0.12rem; }
+      .product_list .product_a .news_product h1 {
+        font-size: 0.13rem;
+        color: #5d5d5d;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 0.22rem;
+        margin-top: 0.06rem; }
+      .product_list .product_a .news_product .sign_p {
+        color: #6f6f6f;
+        font-size: 0.09rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .product_list .product_a .news_product .sign_price {
+        color: #cd6b6c;
+        line-height: 0.28rem; }
+  .product_list .product_a {
+    margin-right: 0.07rem; }
+  .product_list .product_a:nth-child(even) {
+    margin-right: 0; }
+
 #root {
   width: 100%;
   height: 100%; }
+
+.product_tao {
+  width: 100%;
+  height: 5.85rem;
+  background: #eff0f4;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+  .product_tao ul {
+    width: 100% !important;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    width: .1px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column; }
+    .product_tao ul li {
+      width: 100%;
+      height: 1.75rem;
+      overflow: hidden;
+      margin-bottom: 0.08rem; }
+      .product_tao ul li img {
+        width: 100%;
+        height: 100%; }
 
 .index_container {
   width: 100%;
@@ -936,7 +1088,121 @@ a {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     flex: 1;
-    width: .1px; }
+    width: .1px;
+    overflow-y: scroll; }
+  .index_container .index_banner {
+    width: 100%;
+    height: 1.93rem;
+    overflow: hidden; }
+    .index_container .index_banner img {
+      width: 100%;
+      height: auto; }
+  .index_container .line_img {
+    width: 100%;
+    height: 0.77rem;
+    background: #fff;
+    overflow-x: scroll;
+    position: relative; }
+    .index_container .line_img::after {
+      pointer-events: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      content: " ";
+      border-color: #eff0f4;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0; }
+      @media (max--moz-device-pixel-ratio: 1.49), (-webkit-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143dpi), (max-resolution: 1.49dppx) {
+        .index_container .line_img::after {
+          width: 100%;
+          height: 100%; } }
+      @media (min--moz-device-pixel-ratio: 1.5) and (max--moz-device-pixel-ratio: 2.49), (-webkit-min-device-pixel-ratio: 1.5) and (-webkit-max-device-pixel-ratio: 2.49), (min-device-pixel-ratio: 1.5) and (max-device-pixel-ratio: 2.49), (min-resolution: 144dpi) and (max-resolution: 239dpi), (min-resolution: 1.5dppx) and (max-resolution: 2.49dppx) {
+        .index_container .line_img::after {
+          width: 200%;
+          height: 200%;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5); } }
+      @media (min--moz-device-pixel-ratio: 2.5), (-webkit-min-device-pixel-ratio: 2.5), (min-device-pixel-ratio: 2.5), (min-resolution: 240dpi), (min-resolution: 2.5dppx) {
+        .index_container .line_img::after {
+          width: 300%;
+          height: 300%;
+          -webkit-transform: scale(0.33333);
+          transform: scale(0.33333); } }
+    .index_container .line_img ul {
+      width: 200%;
+      height: 100%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      padding: 0 0.11rem; }
+      .index_container .line_img ul li {
+        width: 0.7rem;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        width: .1px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        flex-direction: column; }
+        .index_container .line_img ul li .tupian {
+          height: 0.48rem;
+          width: 100%;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: flex;
+          justify-content: center;
+          padding-top: 0.14rem; }
+          .index_container .line_img ul li .tupian div {
+            width: 0.26rem;
+            height: 0.35rem; }
+            .index_container .line_img ul li .tupian div img {
+              width: 100%;
+              height: 100%; }
+        .index_container .line_img ul li span {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          flex: 1;
+          width: .1px;
+          width: 100%;
+          text-align: center;
+          margin-top: 0.06rem;
+          color: #d79944; }
+  .index_container .content_div {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    background: #eff0f4;
+    height: 1.6rem;
+    overflow: hidden;
+    padding: 0.08rem 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row; }
+    .index_container .content_div div {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      flex: 1;
+      width: .1px;
+      height: 100%;
+      overflow: hidden; }
+      .index_container .content_div div img {
+        width: 100%;
+        height: auto; }
+    .index_container .content_div div:first-child {
+      margin-right: 0.08rem; }
 
 .m-sort {
   width: 100% !important;
