@@ -7,9 +7,12 @@
     height:100%;
     @include flex-direction(column);
     @include flexbox();
+    overflow-y: scroll;
     .index_content{
         width:100%!important;
         @include flex();
     }
-    
+    .index_banner{
+        
+    }
 }
