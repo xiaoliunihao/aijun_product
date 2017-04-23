@@ -38,7 +38,6 @@ export default class TwoColumn extends Component{
 		fetch("/indexList/index")
 		.then((response)=>response.json())
 		.then((res)=>{
-			console.log(res)
 			let dataArr=[];
 			let typeId=this.props.typeId;
 			for(var i=0;i<res.data.length;i++){

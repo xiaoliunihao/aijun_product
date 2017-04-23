@@ -25,6 +25,13 @@ module.exports={
 				pathRewrite:{
 					"^/indexList":''
 				}
+			},
+			"/sortdata":{
+				target:"http://www.fanjiangdz.com",
+				changeOrigin:true,
+				pathRewrite:{
+					"^/sortdata":''
+				}
 			}
 		}
 	},
