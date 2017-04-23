@@ -20,7 +20,7 @@ module.exports={
 		port:7000,
 		proxy:{
 			"/indexList":{
-				target:"http://www.fanjiangdz.com",
+				target:"http://localhost:3000",
 				changeOrigin:true,
 				pathRewrite:{
 					"^/indexList":''

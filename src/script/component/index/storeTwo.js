@@ -28,7 +28,7 @@ export default class StoreTwo extends Component{
 	}
 	componentDidMount(){
 		console.log(this.props.uri)
-		fetch("http://localhost:7001/"+this.props.uri)
+		fetch("http://localhost:3000/"+this.props.uri)
 		.then((response)=>response.json())
 		.then((res)=>{
 			this.setState({
