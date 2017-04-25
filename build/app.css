@@ -1205,6 +1205,7 @@ a {
 
 .m-sort {
   width: 100% !important;
+  overflow-y: scroll;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
