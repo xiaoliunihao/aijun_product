@@ -16,8 +16,8 @@ module.exports={
 
 	devServer:{
 		contentBase:"./build",
-		host:"localhost",
-		port:7000,
+		host:"10.9.157.133",
+		port:8000,
 		proxy:{
 			"/indexList":{
 				target:"http://localhost:3000",

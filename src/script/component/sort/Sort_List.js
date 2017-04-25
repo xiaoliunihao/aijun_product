@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import Scroller from '../../../component_dev/scroller/src';
 export default class Sort_List extends Component{
 	constructor(props){
 		super(props)
@@ -7,12 +8,12 @@ export default class Sort_List extends Component{
 		}
 	}
 	getDataSort(list){
-		console.log(this)
+		
 		return list.map((value,index)=>{
 			return(
 				<li>
 			        <div className="product_img">
-			            <img src={"http://www.fanjiangdz.com/image/"+value.filepath} />
+			            <Scroller.LazyImage height="218" src={"http://www.fanjiangdz.com/image/"+value.filepath} />
 			        </div>
 			        <div className="product_intro">
 			           <span>{value.name}</span>
@@ -25,6 +26,9 @@ export default class Sort_List extends Component{
 		})
 	}
 	render(){
+		if(this.props.TypeIdData.length!=0){
+			this.state.sortDataList=this.props.TypeIdData;
+		}
 		return(
 			<div className="products_type">
 				<ul id="product_box">
@@ -34,14 +38,7 @@ export default class Sort_List extends Component{
 		)
 	}
 	componentDidMount(){
-		var urlLink=''; 
-		if(this.props.TypeId="undefined"){
-			urlLink="/sortdata/products/category/ajaxselect?id=1&currPage=1";
-		}else{
-			urlLink="/sortdata/products/category/ajaxselect?id="+this.props.TypeId+"&currPage=1";
-		}
-		console.log(urlLink)
-		fetch(urlLink)
+		fetch("/sortdata/products/category/ajaxselect?id=1&currPage=1")
 		.then((response)=>response.json())
 		.then((res)=>{
 			this.setState({

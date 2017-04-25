@@ -18,7 +18,7 @@ export default class StoreTwo extends Component{
 	}
 	render(){
 		return (
-			<div className="product_tao">
+			<div className="product_tao tu_img_product">
 				<PubHeader title={this.props.title} />
 				<ul>
 					{this.getImg_srcList(this.state.storeList)}

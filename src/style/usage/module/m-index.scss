@@ -1,3 +1,20 @@
+@import "../component/carousel";
+@include yo-carousel(
+    $name:a,
+    $index-bgcolor:#fff,
+    $on-index-bgcolor:#666
+    
+){
+    height:1.99rem;
+    .index{
+        left:inherit!important;
+        right:5%!important;
+        bottom:0.1rem;
+        transform:translate(0, 0);
+        -webkit-transform:translate(0, 0);
+        
+    }
+}
 #root{
     width:100%;
     height:100%;
@@ -12,7 +29,10 @@
     .index_content{
         width:100%!important;
         @include flex();
-        overflow-y: scroll;
+        overflow: hidden;
+        .yo-scroller-a{
+            height:100%;
+        }
     }
     .index_banner{
         width:100%;
@@ -27,44 +47,48 @@
         width:100%;
         height:0.77rem;
         background:#fff;
-        overflow-x: scroll;
-        @include border(0 0 1px 0,#eff0f4)
-        ul{
-            width:200%;
-            height:100%;
-            @include flexbox();
-            @include flex-direction(row);
-            padding:0 0.11rem;
-            li{
-                width:0.7rem;
-                @include flex();
+        overflow: hidden;
+        @include border(0 0 1px 0,#eff0f4);
+        .yo-scroller-b{
+            width:100%;
+        
+            ul{
+                width:200%;
+                height:100%;
                 @include flexbox();
-                @include flex-direction(column);
-                .tupian{
-                    height:0.48rem;
-                    width:100%;
+                @include flex-direction(row);
+                padding:0 0.11rem;
+                li{
+                    width:0.7rem;
+                    @include flex();
                     @include flexbox();
-                    justify-content:center;
-                    padding-top:0.14rem;
-                    div{
-                        width:0.26rem;
-                        height:0.35rem;
-                        img{
-                            width:100%;
-                            height:100%;
+                    @include flex-direction(column);
+                    .tupian{
+                        height:0.48rem;
+                        width:100%;
+                        @include flexbox();
+                        justify-content:center;
+                        padding-top:0.14rem;
+                        div{
+                            width:0.26rem;
+                            height:0.35rem;
+                            img{
+                                width:100%;
+                                height:100%;
+                            }
                         }
+                        
                     }
-                    
+                    span{
+                        @include flex(); 
+                        width:100%;  
+                        text-align: center; 
+                        margin-top:0.06rem;
+                        color:#d79944;
+                    }
                 }
-                span{
-                    @include flex(); 
-                    width:100%;  
-                    text-align: center; 
-                    margin-top:0.06rem;
-                    color:#d79944;
-                }
-            }
-        } 
+            } 
+        }
     }
     .content_div{
         @include flexbox();

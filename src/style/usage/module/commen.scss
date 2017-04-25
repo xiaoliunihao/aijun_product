@@ -1,4 +1,13 @@
 @import "../fragment/yo-header";
+.yo-scroller{
+    touch-action: none;
+}
+.yo-modal{
+    background-color:#fff!important;
+}
+.text{
+    display: block;
+}
 @font-face {
   font-family: "yofont";
   src: url("/iconfont/iconfont.woff") format("woff"),
@@ -27,6 +36,9 @@
     .title{
         font-weight: normal;
     }
+}
+.tu_img_product{
+    height:6.04rem;
 }
 .title_tao{
     height:0.55rem;
@@ -128,8 +140,8 @@
                 position: relative;
                 position: absolute;
                 top: -0.24rem;
-                z-index: 9999;
-                line-height: 0.6rem;
+                z-index: 99;
+                line-height: 0.45rem;
                 left: 0.1rem;
                 background: #fff;
                 font-size: 0.5rem;
