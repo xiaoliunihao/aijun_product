@@ -1,5 +1,7 @@
 import React,{Component} from "react";
 import Scroller from '../../../component_dev/scroller/src';
+import Loading,{loading} from '../../../component_dev/loading/src';
+localStorage.setItem("TypeId",1);
 export default class TopLine extends Component{
 	constructor(props){
 		super(props)
@@ -9,7 +11,9 @@ export default class TopLine extends Component{
 	    }
 	}
 	getClickValue(index,event){
-		console.log(event)
+		loading.show({
+			text:"小匠正在加载中..."
+		})
 		var liValue=event.target.innerHTML;
 		var TypeId="";
 		switch(liValue){
@@ -25,6 +29,7 @@ export default class TopLine extends Component{
 			case "家纺":TypeId="11";break;
 		}
 		this.props.onFatherLi({TypeId:TypeId})
+		localStorage.setItem("TypeId",TypeId);
 		this.setState({
 			curIndex:index
 		})
