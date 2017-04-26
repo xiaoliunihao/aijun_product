@@ -2,9 +2,8 @@
 .login_container{
     width:100%!important;
     @include flex();
-    background:url(http://www.fanjiangdz.com/weixin/newpublic/images/d_loginbg.png) no-repeat center top;
+    background:#e8e8ea url(http://www.fanjiangdz.com/weixin/newpublic/images/d_loginbg.png) no-repeat center top;
     background-size:100% ;
-
     .Login_img{
     	
     	img{
@@ -18,7 +17,7 @@
     .PeronMess{
         width:2.7rem;
         padding:0 .15rem;
-        margin:0 auto;
+        margin:.2rem auto;
         background:#fff;
         border-radius:4px;
         box-shadow:.01rem .03rem .02rem #c6c6c8;
@@ -39,7 +38,6 @@
             width:2.7rem;
             height:.41rem;
             margin:0 auto;
-
             .login{
                 width:100%;
                 height:100%;
@@ -47,7 +45,29 @@
                 border:0 none;
                 color:#fff;
                 font-weight:400;
-                margin-top:.2rem;
+                margin-top:.1rem;
+
+            }
+             &.active{
+                    display:none;
+                }
+        }
+
+    .Registor_Mess{
+            width:2.7rem;
+            height:.41rem;
+            margin:0 auto;
+            .login{
+                width:100%;
+                height:100%;
+                background:#e3b82e;
+                border:0 none;
+                color:#fff;
+                font-weight:400;
+               
+            }
+             &.active{
+                  display:none;
             }
         }
 }
