@@ -1,61 +1,56 @@
 import React,{Component} from "react";
+import Scroller from '../../../component_dev/scroller/src';
 export default class TopLine extends Component{
-	selectTypeId(){
-		console.log(this)
-		let liState=this.refs.content_tao.innerHTML;
-		var typeId
-		switch(liState){
-			case "套西":typeId=1;break;
-			case "单西":typeId=2;break;
-			case "裤装":typeId=3;break;
-			case "大衣":typeId=4;break;
-			case "马甲":typeId=5;break;
-			case "衬衫":typeId=6;break;
-			case "箱包":typeId=7;break;
-			case "个户":typeId=8;break;
-			case "羊绒衫":typeId=9;break;
-			case "家纺":typeId=11;break;
+	constructor(props){
+		super(props)
+		this.state = {
+		    curIndex:0,
+	        liLine: ["套西","单西","裤装","大衣","马甲","衬衫","箱包","个户","羊绒衫","家纺"]
+	    }
+	}
+	getClickValue(index,event){
+		console.log(event)
+		var liValue=event.target.innerHTML;
+		var TypeId="";
+		switch(liValue){
+			case "套西":TypeId="1";break;
+			case "单西":TypeId="2";break;
+			case "裤装":TypeId="3";break;
+			case "大衣":TypeId="4";break;
+			case "马甲":TypeId="5";break;
+			case "衬衫":TypeId="6";break;
+			case "箱包":TypeId="7";break;
+			case "个户":TypeId="8";break;
+			case "羊绒衫":TypeId="9";break;
+			case "家纺":TypeId="11";break;
 		}
-		console.log(typeId)
-		this.props.onFatherLi({typeId:typeId})
+		this.props.onFatherLi({TypeId:TypeId})
+		this.setState({
+			curIndex:index
+		})
+	}
+	selectTypeId(list){
+		return list.map((value,index)=>{
+			return(
+				<li>
+					<span><i onClick={this.getClickValue.bind(this,index)} className={index==this.state.curIndex?"border_active":""}>{value}</i></span>
+				</li>
+			)
+		})
 	}
 	
 	render(){
-		console.log(this)
 		return(
            <div className="topLine line_scroll">
+           		<Scroller
+       			extraClass="yo-scroller-d"
+       			scrollX={true} 
+				scrollY={false}
+       			>
            		<ul>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_tao" className="border_active">套西</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_dan">单西</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_ku">裤装</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_da">大衣</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_ma">马甲</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_chen">衬衫</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_xiang">箱包</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_ge">个户</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_yang">羊绒衫</i></span>
-					</li>
-					<li onClick={this.selectTypeId.bind(this)}>
-						<span><i ref="content_jia">家纺</i></span>
-					</li>
+					{this.selectTypeId(this.state.liLine)}
 				</ul>
+				</Scroller>
            </div>
 		)
 	}
