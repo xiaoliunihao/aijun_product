@@ -15,11 +15,11 @@ ReactDom.render(
 	      <IndexRedirect to="/content" />
 	      <Route path="content" component={Index_Content} />
 	      <Route path="sort" component={Sort} />
-	      <Route path="book_valume" component={BookValume} />
 	      <Route path="brand" component={Brand} />
 	      <Route path="login" component={Login} />
 	    </Route>
 	    <Route path="/storeDetail" component={StoreDetail}></Route>
+		<Route path="/book_valume" component={BookValume} />
 	</Router>
 	,
 	document.getElementById("root")
