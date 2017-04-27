@@ -1,7 +1,8 @@
 .m-brand{
     width:100%!important;
     @include flex();
-    overflow-y:scroll;
+    .yo-scroller-abc{
+        height:4.76rem;
     .brandFabric{
     	height:2.25rem;
     	width:100%;
@@ -62,4 +63,5 @@
     		}
     	}
     }
+}
 }

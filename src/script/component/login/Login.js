@@ -1,7 +1,13 @@
 import React,{Component} from "react";
+
+import Modal from '../../../component_dev/modal/src'
+
 export default class Login extends Component{
 	constructor(props) {
 		super(props)
+		this.state={
+			modal:false
+		}
 	}
 	
 	submit() {
@@ -37,6 +43,7 @@ export default class Login extends Component{
 		let password = this.refs.password.value;
 
 		let headers = new Headers({
+			/*'Content-Type': 'application/json;charset=utf-8'*/
 			'Content-Type': 'application/x-www-form-urlencoded'
 		})
 
@@ -44,6 +51,10 @@ export default class Login extends Component{
 			method: 'POST',
 			headers: headers,
 			body: `username=${username}&password=${password}`
+			/*body:{
+				username:username,
+				password:password
+			}*/
 		})
 
 		.then((response) => response.json())
@@ -71,8 +82,11 @@ export default class Login extends Component{
 					<input type="password" placeholder="密码" className="Password" ref="password"/>
 				</div>
 				<div className="Registor_Mess">
-					<button className="login" onClick={this.submit.bind(this)}>注册</button>
+					<b className="registor" onClick={()=>{this.setState({modal:true})}}>点此快速注册</b>
 				</div>
+				<Modal show={this.state.modal} >
+
+				</Modal>
 				<div className="Login_Mess">
 					<button className="login" onClick={this.loginForm.bind(this)}>登录</button>
 				</div>
