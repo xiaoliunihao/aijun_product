@@ -45,8 +45,6 @@
                 border:0 none;
                 color:#fff;
                 font-weight:400;
-                margin-top:.1rem;
-
             }
              &.active{
                     display:none;
@@ -54,20 +52,18 @@
         }
 
     .Registor_Mess{
-            width:2.7rem;
-            height:.41rem;
-            margin:0 auto;
-            .login{
-                width:100%;
-                height:100%;
-                background:#e3b82e;
-                border:0 none;
-                color:#fff;
-                font-weight:400;
-               
-            }
-             &.active{
-                  display:none;
+            .registor{
+                display:inline-block;
+                font-size:.10rem;
+                font-weight:normal;
+                @include border(0 0 1px 0,#383a3c);
+                position:relative;
+                left:2.2rem;
+                top:-.12rem;
             }
         }
+    .m-registor{
+        height:2rem;
+        text-align:center
+    }
 }

@@ -38,9 +38,7 @@ export default class Loading extends Component {
             <div
                 className={classNames('yo-loading', props.extraClass)}
             >
-                <i>
-                    <img src="./img/moreImage.gif"/>
-                </i>
+                <i className="yo-ico" />
                 {!!props.text.toString().length && <span className="text">{props.text}</span>}
             </div>
         );
