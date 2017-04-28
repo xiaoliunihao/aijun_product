@@ -84,8 +84,8 @@ export default class Login extends Component{
 				<div className="Registor_Mess">
 					<b className="registor" onClick={()=>{this.setState({modal:true})}}>点此快速注册</b>
 				</div>
-				<Modal show={this.state.modal} >
-
+				<Modal show={this.state.modal} align="center" width="90%" height="30%">
+					dasfsadfs	
 				</Modal>
 				<div className="Login_Mess">
 					<button className="login" onClick={this.loginForm.bind(this)}>登录</button>
