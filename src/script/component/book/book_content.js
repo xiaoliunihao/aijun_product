@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import Scroller from '../../../component_dev/scroller/src';
+import Loading,{loading} from '../../../component_dev/loading/src'
 export default class BookContent extends Component{
 	constructor(props){
 		super(props)
@@ -14,15 +15,26 @@ export default class BookContent extends Component{
 			)
 		}):[<option></option>];
 	}
+	abc(data){
+		return data
+	}
 	getCity(){
 		var getProId=this.refs.province.value;
-		fetch("/sortdata/products/getElementArea")
-		.then((response)=>response.json())
+		let headers = new Headers({
+	      'Content-Type': 'application/x-www-form-urlencoded'
+	    })
+		
+		fetch("/sortdata/products/getElementArea?callback=abc",{
+			method: 'POST',
+			jsonpCallback: 'jsonp',
+		    headers: headers,
+		    body:"{'pid':"+getProId+"}"
+		})
+		.then((response)=>{
+			response.json()
+		})
 		.then((res)=>{
-			
-			this.setState({
-				province:res.province
-			})
+			console.log(res)
 		})
 		.catch(function(e){
 			alert(e)
@@ -31,6 +43,7 @@ export default class BookContent extends Component{
 	getArea(){
 		
 	}
+	
 	render(){
 		
 		return(
@@ -48,8 +61,8 @@ export default class BookContent extends Component{
 							基本信息
 						</div>
 						<div className="user_input">
-							<input className="user_enterName" type="text" placeholder="请输入姓名"/>
-							<input className="user_enterTel" type="text" placeholder="请输入电话"/>
+							<input className="user_enterName" ref="userName" type="text" placeholder="请输入姓名"/>
+							<input className="user_enterTel" ref="password" type="text" placeholder="请输入电话"/>
 						</div>
 						
 					</div>
@@ -63,17 +76,15 @@ export default class BookContent extends Component{
 									<option>请选择省</option>
 									{this.getProvince(this.state.province)}
 								</select>
-								<select className="city" onchange={this.getArea()}>
+								<select ref="city" className="city" onchange={this.getArea()}>
 									<option>请选择市</option>
-									
 								</select>
-								<select className="area">
+								<select ref="area" className="area">
 									<option>请选择区</option>
-									<option value=""></option>
 								</select>
 							</div>
 							<div className="textarea_box">
-							    <textarea className="text_area" placeholder="请输入详细地址"></textarea>
+							    <textarea ref="text_area" className="text_area" placeholder="请输入详细地址"></textarea>
 							</div>
 						</div>
 					</div>
@@ -110,16 +121,19 @@ export default class BookContent extends Component{
 					</div>
 				</div>
 			</Scroller>
+			
 		)
 	}
 	componentDidMount(){
 		fetch("/indexList/province")
 		.then((response)=>response.json())
 		.then((res)=>{
-
 			this.setState({
 				province:res.province
 			})
+			setTimeout(function(){
+				loading.hide()
+			},1000)
 		})
 		.catch(function(e){
 			alert(e)
